@@ -1,8 +1,12 @@
 package com.dkatzdev.hackbu2017;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -87,6 +91,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_important) {
 
         } else if (id == R.id.nav_neutral) {
+
+        } else if (id == R.id.nav_unimportant) {
 
         } else if (id == R.id.nav_other) {
 
