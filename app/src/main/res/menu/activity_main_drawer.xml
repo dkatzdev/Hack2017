@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_recent"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Recent" />
+        <item
+            android:id="@+id/nav_urgent"
+            android:icon="@drawable/ic_action_name"
+            android:title="Urgent" />
+        <item
+            android:id="@+id/nav_important"
+            android:icon="@drawable/ic_action_name"
+            android:title="Important" />
+        <item
+            android:id="@+id/nav_neutral"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Neutral" />
+        <item
+            android:id="@+id/nav_junk"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="Junk" />
+        <item
+            android:id="@+id/nav_other"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="Other" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
