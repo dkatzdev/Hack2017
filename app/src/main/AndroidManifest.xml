@@ -23,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sendSMS"
+            android:label="@string/app_name_short"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -2,38 +2,33 @@ package com.dkatzdev.hackbu2017;
 
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 public class sendSMS extends AppCompatActivity {
 
-    FloatingActionButton send_button = (FloatingActionButton) findViewById(R.id.send_button);
 
-    EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
-
-    EditText message = (EditText) findViewById(R.id.message);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sendsms);
 
 /*
 Creates the click listener for the application and what should happen if the user clicks the send button
  */
+        FloatingActionButton send_button = (FloatingActionButton) findViewById(R.id.send_button);
+
+        final EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
+
+        final EditText message = (EditText) findViewById(R.id.message);
         send_button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -66,9 +61,11 @@ Creates the click listener for the application and what should happen if the use
         This identifies a pending intent object that identifies the object's request and in turn
         starts up the smsManager and sends the text message
          */
-        PendingIntent pi = PendingIntent.getActivity(this, 0,
-                new Intent(this, sendSMS.class), 0);
+        //PendingIntent pi = PendingIntent.getActivity(this, 0,
+        //        new Intent(this, MainActivity.class), 0);
         SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage(phoneNumber, null, Textmessage, pi, null);
+        sms.sendTextMessage(phoneNumber, null, Textmessage, null, null);
+        System.out.println("Send pressed");
+        this.finish();
     }
 }

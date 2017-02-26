@@ -30,7 +30,9 @@
         app:srcCompat="@drawable/ic_menu_send"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|right"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        android:onClick="onNewMessagePressed"
+        android:clickable="true" />
 
     <include layout="@layout/content_main"
         android:id="@+id/include" />

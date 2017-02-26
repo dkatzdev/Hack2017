@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl"
     android:weightSum="1">
+
 
     <EditText
         android:inputType="phone"
@@ -15,14 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:paddingBottom="26dp"
-        android:backgroundTint="@android:color/transparent"
         android:phoneNumber="true"
         android:textAlignment="gravity"
-        android:background="@android:color/transparent"
-        android:contextClickable="true"
-        android:foreground="@android:color/transparent"
-        android:textColorHighlight="@android:color/white"
-        android:textColor="@android:color/transparent" />
+        android:contextClickable="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,7 +36,8 @@
                 android:ems="10"
                 android:id="@+id/message"
                 android:autoText="false"
-                android:hint="Message Text" />
+                android:hint="Message Text"
+                android:layoutDirection="locale" />
 
         </LinearLayout>
 
