@@ -7,4 +7,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_send_sms">sendSMS</string>
+    <string name="title_activity_receive_sms">receiveSMS</string>
+    <string name="title_activity_receiver_of_sms">ReceiverOfSMS</string>
+
+    <string name="sms_message"><![CDATA[ From : %1$s<br/>%2$s]]></string>
 </resources>
