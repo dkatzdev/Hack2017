@@ -10,7 +10,7 @@ public class Message{
     private int category;
 
 
-    public Message(String address, String text){
+    public Message(String text, String address){
         this.text = text;
         this.address = address;
        // this.recieved  = recieved;

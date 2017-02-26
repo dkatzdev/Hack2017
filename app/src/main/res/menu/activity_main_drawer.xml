@@ -8,19 +8,19 @@
             android:title="Recent" />
         <item
             android:id="@+id/nav_urgent"
-            android:icon="@drawable/ic_action_name"
+            android:icon="@android:drawable/ic_dialog_alert"
             android:title="Urgent" />
         <item
             android:id="@+id/nav_important"
-            android:icon="@drawable/ic_action_name"
+            android:icon="@android:drawable/ic_dialog_info"
             android:title="Important" />
         <item
             android:id="@+id/nav_neutral"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_dialog_email"
             android:title="Neutral" />
         <item
             android:id="@+id/nav_unimportant"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_menu_more"
             android:title="Unimportant" />
         <item
             android:id="@+id/nav_junk"

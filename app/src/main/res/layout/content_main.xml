@@ -25,6 +25,23 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
+            <TextView
+                android:text="Please Select a Category from the Navigation Drawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="30dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="297dp"
+                app:srcCompat="@android:drawable/ic_dialog_email"
+                android:id="@+id/imageView2"
+                android:scaleType="fitCenter"
+                android:background="@color/colorAccent" />
+
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

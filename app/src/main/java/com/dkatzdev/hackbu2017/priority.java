@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.Vector;
 import java.lang.String;
 
-public class priority extends AppCompatActivity {
+public class priority extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class priority extends AppCompatActivity {
         for(i = 0; i < num_words; i++){
             temp = "";
             for(int j = i; j < num_words; j++){
-                temp = temp +" " + words.elementAt(j);
+                temp = temp + words.elementAt(j);
                 if(urgent_v.contains(temp)){
                     urgent++;
                 }
@@ -104,12 +104,11 @@ public class priority extends AppCompatActivity {
             category = 5;
         }
 
-        System.out.println(category);
-        Intent intent = new Intent();
-        intent.putExtra("Address", current.getAddress());
-        intent.putExtra ("Text", current.getText());
-        intent.putExtra("Category", category);
-        setResult(Activity.RESULT_OK, intent);
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("Address", current.getAddress());
+        resultIntent.putExtra ("Text", current.getText());
+        resultIntent.putExtra("Category", category);
+        setResult(Activity.RESULT_OK, resultIntent);
         finish();
     }
 

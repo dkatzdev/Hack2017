@@ -1,27 +1,20 @@
 package com.dkatzdev.hackbu2017;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.Vector;
 
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
 public class Read_Inbox extends Activity{
 
     private static final String INBOX_URI = "content://sms/inbox";
@@ -37,9 +30,9 @@ public class Read_Inbox extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.read_input);
+        setContentView(R.layout.recent_list);
         readSMS();
-        mListView = (ListView) findViewById(R.id.list);
+        mListView = (ListView) findViewById(R.id.recent_list);
         mListView.setAdapter(new ItemArrayAdapter(this,itemArray ));
        // mListView.setAdapter(smsList);
         mListView.setOnItemClickListener(MyItemClickListener);

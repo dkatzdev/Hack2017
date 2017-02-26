@@ -108,6 +108,7 @@ public class PriorityStrings{
         junk.add("Share this video");
         junk.add("Dennis Foreman");
         junk.add("clean your room");
+        junk.add("chores");
     }
 
     public Vector<String> getJunk(){
