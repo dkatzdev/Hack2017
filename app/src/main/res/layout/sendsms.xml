@@ -41,7 +41,7 @@
                 android:ems="10"
                 android:id="@+id/message"
                 android:autoText="false"
-                android:text="Message.." />
+                android:hint="Message Text" />
 
         </LinearLayout>
 
