@@ -26,13 +26,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="480dp"
-        android:layout_weight="0.02">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="5024dp">
+            android:layout_height="match_parent">
 
             <EditText
                 android:layout_width="match_parent"
@@ -48,19 +48,14 @@
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="normal"
+        android:layout_gravity="top|right"
+        android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_menu_send"
-        android:id="@+id/sendbutton"
-        tools:layoutDirection="rtl"
-        android:layoutDirection="rtl"
-        android:layout_weight="0.27"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:layout_margin="@dimen/fab_margin" />
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|right"
+        app:fabSize="normal" />
 
 </LinearLayout>
