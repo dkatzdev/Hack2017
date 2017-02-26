@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:weightSum="1">
+
+    <EditText
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/phoneNumber"
+        android:hint="Phone Number"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="26dp"
+        android:backgroundTint="@android:color/transparent"
+        android:phoneNumber="true"
+        android:textAlignment="gravity"
+        android:background="@android:color/transparent"
+        android:contextClickable="true"
+        android:foreground="@android:color/transparent"
+        android:textColorHighlight="@android:color/white"
+        android:textColor="@android:color/transparent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_weight="0.02">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="5024dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text|textMultiLine"
+                android:ems="10"
+                android:id="@+id/message"
+                android:autoText="false"
+                android:text="Message.." />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_menu_send"
+        android:id="@+id/sendbutton"
+        tools:layoutDirection="rtl"
+        android:layoutDirection="rtl"
+        android:layout_weight="0.27"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_margin="@dimen/fab_margin" />
+
+</LinearLayout>
