@@ -3,6 +3,7 @@ package com.dkatzdev.hackbu2017;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
@@ -13,29 +14,30 @@ import android.widget.Toast;
 
 public class sendSMS extends AppCompatActivity {
 
-
+    Intent intent2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sendsms);
+        EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
+        phone_number.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
 
 /*
 Creates the click listener for the application and what should happen if the user clicks the send button
  */
         FloatingActionButton send_button = (FloatingActionButton) findViewById(R.id.send_button);
-
-        final EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
-
-        final EditText message = (EditText) findViewById(R.id.message);
         send_button.setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View view) {
                 /*
                 Defines and retrieves the phone number and the maessage entered by the user and
                 checks to see if the message is greater
                  */
+                EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
+                EditText message = (EditText) findViewById(R.id.message);
+                System.out.println(intent.getStringExtra(Intent.EXTRA_TEXT));
                 String phoneNumber = phone_number.getText().toString();
                 String Textmessage = message.getText().toString();
 

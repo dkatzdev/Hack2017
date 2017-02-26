@@ -15,9 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:paddingBottom="26dp"
-        android:phoneNumber="true"
         android:textAlignment="gravity"
-        android:contextClickable="true" />
+        android:contextClickable="true"
+        android:editable="true"
+        android:enabled="true"
+        android:phoneNumber="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,7 +39,9 @@
                 android:id="@+id/message"
                 android:autoText="false"
                 android:hint="Message Text"
-                android:layoutDirection="locale" />
+                android:layoutDirection="locale"
+                android:editable="true"
+                android:enabled="true" />
 
         </LinearLayout>
 

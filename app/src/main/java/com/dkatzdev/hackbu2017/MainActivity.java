@@ -180,19 +180,30 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(myIntent);
             // Handle the camera action
         } else if (id == R.id.nav_urgent) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_urgent.class);
+            myIntent.putExtra("choice", 0);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_important) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_important.class);
+            myIntent.putExtra("choice", 1);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_neutral) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_neutral.class);
+            myIntent.putExtra("choice", 2);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_unimportant) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_unimportant.class);
+            myIntent.putExtra("choice", 3);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_other) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_other.class);
+            myIntent.putExtra("choice", 4);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_junk) {
-
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_junk.class);
+            myIntent.putExtra("choice", 5);
+            MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

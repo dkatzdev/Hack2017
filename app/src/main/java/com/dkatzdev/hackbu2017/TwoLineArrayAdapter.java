@@ -47,8 +47,8 @@ public abstract class TwoLineArrayAdapter<T> extends ArrayAdapter<T> {
                 android.R.id.text2);
 
         T t = (T)getItem(position);
-        lineOneView.setText(lineOneText(t));
-        lineTwoView.setText(lineTwoText(t));
+        lineOneView.setText(lineTwoText(t));
+        lineTwoView.setText(lineOneText(t));
 
         return listItemView;
     }

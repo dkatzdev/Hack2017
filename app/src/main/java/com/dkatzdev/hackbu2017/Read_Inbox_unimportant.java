@@ -1,37 +1,30 @@
 package com.dkatzdev.hackbu2017;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
-
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-public class Read_Inbox extends Activity{
+
+import java.util.Iterator;
+import java.util.Vector;
+
+public class Read_Inbox_unimportant extends Activity{
 
     private static final String INBOX_URI = "content://sms/inbox";
-    private static Read_Inbox activity;
+    private static Read_Inbox_unimportant activity;
     private TwoLineArrayAdapter<String> smsList;
     private ListView mListView;
     Vector<Item> items = new Vector<Item>();
     Item[] itemArray;
     private ArrayAdapter<String> adapter;
-    public static Read_Inbox instance() {
+    public static Read_Inbox_unimportant instance() {
         return activity;
     }
     @Override
@@ -80,9 +73,9 @@ public class Read_Inbox extends Activity{
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
             try {
-                Intent myIntent = new Intent(Read_Inbox.this, sendSMS.class);
+                Intent myIntent = new Intent(Read_Inbox_unimportant.this, sendSMS.class);
                 myIntent.putExtra(Intent.EXTRA_TEXT, itemArray[pos].getPhoneNumber());
-                Read_Inbox.this.startActivity(myIntent);
+                Read_Inbox_unimportant.this.startActivity(myIntent);
             } catch (Exception e) {
                 e.printStackTrace();
             }
