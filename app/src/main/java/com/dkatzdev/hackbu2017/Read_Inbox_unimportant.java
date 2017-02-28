@@ -129,23 +129,16 @@ public class Read_Inbox_unimportant extends Activity{
             else if(highest == 5){
                 category = 5;
             }
-            //System.out.println("Checking category");
-            //System.out.println(category);
             if(category == 3) {
-                System.out.printf("Category is %d \n", category);
-                //add_to_list(sender, message);
-                System.out.println(sender);
-                System.out.println(message);
                 Item item = new Item();
                 item.setPhoneNumber(sender);
                 item.setMessage(message);
-                System.out.println(item);
                 items.add(item);
             }
             /*
             //adapter.add(Html.fromHtml(formattedText).toString());*/
             loops++;
-        } while (smsInboxCursor.moveToNext() && loops<100);
+        } while (smsInboxCursor.moveToNext() && loops<500);
         itemArray = new Item[items.size()];
         Iterator it = items.iterator();
         for(int counter = 0; counter < items.size(); counter++){
