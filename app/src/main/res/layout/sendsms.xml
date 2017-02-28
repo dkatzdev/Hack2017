@@ -14,50 +14,48 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:contextClickable="true"
-        android:editable="true"
         android:enabled="true"
-        android:phoneNumber="true"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:singleLine="true" />
+        android:maxLines="1"
+        android:drawableLeft="@android:drawable/ic_menu_call"
+        android:drawableTint="@android:color/darker_gray"
+        android:drawablePadding="8dp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom">
 
             <TextView
-                android:text="Message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:labelFor="@+id/message"
-                android:textSize="12sp"
+                android:id="@+id/given"
+                android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:focusable="true" />
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text|textMultiLine"
-                android:ems="10"
-                android:id="@+id/message"
-                android:autoText="false"
-                android:hint="Type an SMS message"
-                android:layoutDirection="locale"
-                android:editable="true"
-                android:enabled="true"
-                android:fontFamily="sans-serif"
-                android:layout_gravity="bottom"
-                android:labelFor="@+id/Messge"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp" />
+                android:visibility="visible">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Message"
+                    android:id="@+id/message"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp" />
+            </android.support.design.widget.TextInputLayout>
+
 
         </LinearLayout>
 
@@ -67,11 +65,11 @@
         android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
+        android:layout_gravity="top|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_menu_send"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|right"
+        app:layout_anchorGravity="bottom|end"
         app:fabSize="normal" />
 
 </LinearLayout>

@@ -74,7 +74,8 @@ public class Read_Inbox extends Activity{
         public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
             try {
                 Intent myIntent = new Intent(Read_Inbox.this, sendSMS.class);
-                myIntent.putExtra(Intent.EXTRA_TEXT, itemArray[pos].getPhoneNumber());
+                myIntent.putExtra("number", itemArray[pos].getPhoneNumber());
+                myIntent.putExtra("message", itemArray[pos].getMessage());
                 Read_Inbox.this.startActivity(myIntent);
             } catch (Exception e) {
                 e.printStackTrace();

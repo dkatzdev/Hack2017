@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -22,7 +23,10 @@ public class sendSMS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sendsms);
         EditText phone_number = (EditText) findViewById(R.id.phoneNumber);
-        phone_number.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
+        TextView given = (TextView) findViewById(R.id.given);
+        phone_number.setText(intent.getStringExtra("number"));
+        given.setText(intent.getStringExtra("message"));
+
 
 /*
 Creates the click listener for the application and what should happen if the user clicks the send button
