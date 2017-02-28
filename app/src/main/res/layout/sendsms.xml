@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-
     <EditText
         android:inputType="phone"
         android:ems="10"
