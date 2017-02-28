@@ -203,7 +203,6 @@ public class MainActivity extends AppCompatActivity
             Intent myIntent = new Intent(MainActivity.this, Read_Inbox_junk.class);
             myIntent.putExtra("choice", 5);
             MainActivity.this.startActivity(myIntent);
-        } else if (id == R.id.nav_send) {
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

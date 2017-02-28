@@ -14,12 +14,12 @@
         android:hint="Phone Number"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:paddingBottom="26dp"
         android:textAlignment="gravity"
         android:contextClickable="true"
         android:editable="true"
         android:enabled="true"
-        android:phoneNumber="true" />
+        android:phoneNumber="true"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,7 +41,8 @@
                 android:hint="Message Text"
                 android:layoutDirection="locale"
                 android:editable="true"
-                android:enabled="true" />
+                android:enabled="true"
+                android:layout_margin="@dimen/activity_horizontal_margin" />
 
         </LinearLayout>
 
