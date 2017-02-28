@@ -10,15 +10,15 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/phoneNumber"
-        android:hint="Phone Number"
+        android:hint="Type a phone number"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:textAlignment="gravity"
         android:contextClickable="true"
         android:editable="true"
         android:enabled="true"
         android:phoneNumber="true"
-        android:layout_margin="@dimen/activity_horizontal_margin" />
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:singleLine="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,7 +28,19 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:text="Message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:labelFor="@+id/message"
+                android:textSize="12sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:focusable="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -37,11 +49,15 @@
                 android:ems="10"
                 android:id="@+id/message"
                 android:autoText="false"
-                android:hint="Message Text"
+                android:hint="Type an SMS message"
                 android:layoutDirection="locale"
                 android:editable="true"
                 android:enabled="true"
-                android:layout_margin="@dimen/activity_horizontal_margin" />
+                android:fontFamily="sans-serif"
+                android:layout_gravity="bottom"
+                android:labelFor="@+id/Messge"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
 
         </LinearLayout>
 
