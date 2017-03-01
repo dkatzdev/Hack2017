@@ -27,6 +27,7 @@ public class Read_Inbox extends Activity{
     public static Read_Inbox instance() {
         return activity;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

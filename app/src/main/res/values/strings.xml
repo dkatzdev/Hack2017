@@ -12,4 +12,5 @@
     <string name="title_activity_receiver_of_sms">ReceiverOfSMS</string>
 
     <string name="sms_message"><![CDATA[ From : %1$s<br/>%2$s]]></string>
+    <string name="phone_number">Phone Number</string>
 </resources>

@@ -15,8 +15,8 @@ import android.widget.ListView;
 import java.util.Iterator;
 import java.util.Vector;
 
-
 public class Read_Inbox_urgent extends Activity{
+
     private static final String INBOX_URI = "content://sms/inbox";
     private TwoLineArrayAdapter<String> smsList;
     private ListView mListView;
@@ -24,9 +24,7 @@ public class Read_Inbox_urgent extends Activity{
     Vector<Item> items = new Vector<Item>();
     Item[] itemArray;
     private ArrayAdapter<String> adapter;
-    //public static Read_Inbox_urgent instance() {
-    //    return activity;
-    //}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
