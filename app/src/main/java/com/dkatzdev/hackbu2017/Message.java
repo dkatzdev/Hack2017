@@ -2,7 +2,7 @@ package com.dkatzdev.hackbu2017;
 
 import java.lang.String;
 
-public class Message{
+public class Message {
     private String text;
     private String address;
     //private int recieved;
@@ -10,26 +10,26 @@ public class Message{
     private int category;
 
 
-    public Message(String text, String address){
+    public Message(String text, String address) {
         this.text = text;
         this.address = address;
-       // this.recieved  = recieved;
-       // this.sent = sent;
+        // this.recieved  = recieved;
+        // this.sent = sent;
     }
 
-    public String getText(){
+    public String getText() {
         return this.text;
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return this.address;
     }
 
-    public void setCategory(int category){
+    public void setCategory(int category) {
         this.category = category;
     }
 
-    public int getCategory(){
+    public int getCategory() {
         return this.category;
     }
 
@@ -37,8 +37,8 @@ public class Message{
     //    return this.sent;
     //}
 
-   // public int getRecieved(){
-   //     return this.recieved;
+    // public int getRecieved(){
+    //     return this.recieved;
     //}
 
 }

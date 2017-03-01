@@ -1,21 +1,22 @@
 package com.dkatzdev.hackbu2017;
 
-public class Item {
+class Item {
     String phoneNumber = null;
 
     String message = null;
 
     Item() {
     }
-    public void setPhoneNumber(String phoneNumber) {
+
+    void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     public void setMessage(String message) {
-        this.message = message ;
+        this.message = message;
     }
 
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return phoneNumber;
     }
 

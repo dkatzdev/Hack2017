@@ -18,21 +18,18 @@ import android.widget.ListView;
 //TODO Implement MMS support
 //TODO Fix Action Bar not displaying in the different inboxes
 //TODO Replace the various inbox activities with one dynamic one
-    // This dynamic inbox will take an intent from the main activity which specifies the "inbox"
-    // chosen, and uses that to select the priority level to display. This will make it easier to
-    // modify the categorization algorithm without redundant code
-public class Read_Inbox extends Activity{
+// This dynamic inbox will take an intent from the main activity which specifies the "inbox"
+// chosen, and uses that to select the priority level to display. This will make it easier to
+// modify the categorization algorithm without redundant code
+public class Read_Inbox extends Activity {
 
     private static final String INBOX_URI = "content://sms/inbox";
-    private static Read_Inbox activity;
+    private Read_Inbox activity;
     private TwoLineArrayAdapter<String> smsList;
     private ListView mListView;
-    Vector<Item> items = new Vector<Item>();
+    Vector<Item> items = new Vector<>();
     Item[] itemArray;
     private ArrayAdapter<String> adapter;
-    public static Read_Inbox instance() {
-        return activity;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +37,17 @@ public class Read_Inbox extends Activity{
         setContentView(R.layout.recent_list);
         readSMS();
         mListView = (ListView) findViewById(R.id.recent_list);
-        mListView.setAdapter(new ItemArrayAdapter(this,itemArray ));
-       // mListView.setAdapter(smsList);
+        mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
+        // mListView.setAdapter(smsList);
         mListView.setOnItemClickListener(MyItemClickListener);
     }
+
     @Override
     public void onStart() {
         super.onStart();
         activity = this;
     }
+
     public void readSMS() {
         ContentResolver contentResolver = getContentResolver();
         Cursor smsInboxCursor = contentResolver.query(Uri.parse(INBOX_URI), null, null, null, null);
@@ -68,14 +67,16 @@ public class Read_Inbox extends Activity{
         } while (smsInboxCursor.moveToNext());
         itemArray = new Item[items.size()];
         Iterator it = items.iterator();
-        for(int counter = 0; counter < items.size(); counter++){
+        for (int counter = 0; counter < items.size(); counter++) {
             itemArray[counter] = (Item) it.next();
         }
     }
+
     public void updateList(final String newSms) {
         adapter.insert(newSms, 0);
         adapter.notifyDataSetChanged();
     }
+
     private OnItemClickListener MyItemClickListener = new OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {

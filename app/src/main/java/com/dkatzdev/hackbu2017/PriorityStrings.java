@@ -3,15 +3,15 @@ package com.dkatzdev.hackbu2017;
 import java.util.Vector;
 import java.lang.String;
 
-public class PriorityStrings{
-    private Vector<String> urgent = new Vector<String>(1);
-    private Vector<String> important = new Vector<String>(1);
-    private Vector<String> neutral = new Vector<String>(1);
-    private Vector<String> unimportant = new Vector<String>(1);
-    private Vector<String> junk = new Vector<String>(1);
-    private Vector<String> other = new Vector<String>(1);
+class PriorityStrings {
+    private Vector<String> urgent = new Vector<>(1);
+    private Vector<String> important = new Vector<>(1);
+    private Vector<String> neutral = new Vector<>(1);
+    private Vector<String> unimportant = new Vector<>(1);
+    private Vector<String> junk = new Vector<>(1);
+    private Vector<String> other = new Vector<>(1);
 
-    public PriorityStrings(){
+    PriorityStrings() {
         createUrgent();
         createImportant();
         createNeutral();
@@ -20,7 +20,7 @@ public class PriorityStrings{
         createOther();
     }
 
-    public void createUrgent(){
+    private void createUrgent() {
         urgent.add("call me now");
         urgent.add("right now");
         urgent.add("emergency");
@@ -32,11 +32,11 @@ public class PriorityStrings{
         urgent.add("Oh shit get the car");
     }
 
-    public Vector<String> getUrgent(){
+    Vector<String> getUrgent() {
         return this.urgent;
     }
 
-    private void createImportant(){
+    private void createImportant() {
         important.add("call me");
         important.add("Text me back");
         important.add("need");
@@ -60,11 +60,11 @@ public class PriorityStrings{
         important.add("Dog");
     }
 
-    public Vector<String> getImportant(){
+    Vector<String> getImportant() {
         return this.important;
     }
 
-    private void createNeutral(){
+    private void createNeutral() {
         neutral.add("want");
         neutral.add("here");
         neutral.add("payment posted");
@@ -77,11 +77,11 @@ public class PriorityStrings{
         neutral.add("oh");
     }
 
-    public Vector<String> getNeutral(){
+    Vector<String> getNeutral() {
         return this.neutral;
     }
 
-    private void createUnimportant(){
+    private void createUnimportant() {
         unimportant.add("Yup");
         unimportant.add("Lol");
         unimportant.add("k");
@@ -98,11 +98,11 @@ public class PriorityStrings{
         unimportant.add("Gotcha");
     }
 
-    public Vector<String> getUnimportant(){
+    Vector<String> getUnimportant() {
         return this.unimportant;
     }
 
-    private void createJunk(){
+    private void createJunk() {
         junk.add("your message could not be delivered");
         junk.add("Like and");
         junk.add("Share this video");
@@ -111,15 +111,15 @@ public class PriorityStrings{
         junk.add("chores");
     }
 
-    public Vector<String> getJunk(){
+    Vector<String> getJunk() {
         return this.junk;
     }
 
-    private void createOther(){
+    private void createOther() {
         other.add("STRAIGHT TALK");
     }
 
-    public Vector<String> getOther(){
+    public Vector<String> getOther() {
         return this.other;
     }
 }

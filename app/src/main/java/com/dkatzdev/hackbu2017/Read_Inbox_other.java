@@ -16,12 +16,12 @@ import java.util.Iterator;
 import java.util.Vector;
 
 
-public class Read_Inbox_other extends Activity{
+public class Read_Inbox_other extends Activity {
     private static final String INBOX_URI = "content://sms/inbox";
     private TwoLineArrayAdapter<String> smsList;
     private ListView mListView;
     int category;
-    Vector<Item> items = new Vector<Item>();
+    Vector<Item> items = new Vector<>();
     Item[] itemArray;
     private ArrayAdapter<String> adapter;
 
@@ -43,7 +43,7 @@ public class Read_Inbox_other extends Activity{
 
 
             String text = current.getText();
-            Vector<String> words = new Vector<String>(1);
+            Vector<String> words;
             words = getWords(text);
             int num_words = text.trim().split("\\s+").length;
             int urgent, important, neutral, unimportant, junk, other, i;
@@ -51,7 +51,7 @@ public class Read_Inbox_other extends Activity{
             Vector<String> urgent_v, important_v, neutral_v, unimportant_v, junk_v, other_v;
 
 
-            PriorityStrings priorities  = new PriorityStrings();
+            PriorityStrings priorities = new PriorityStrings();
             urgent_v = priorities.getUrgent();
             neutral_v = priorities.getNeutral();
             important_v = priorities.getImportant();
@@ -61,30 +61,24 @@ public class Read_Inbox_other extends Activity{
 
             String temp;
 
-            for(i = 0; i < num_words; i++){
+            for (i = 0; i < num_words; i++) {
                 temp = "";
-                for(int j = i; j < num_words; j++){
+                for (int j = i; j < num_words; j++) {
                     temp = temp + words.elementAt(j);
-                    if(urgent_v.contains(temp)){
+                    if (urgent_v.contains(temp)) {
                         urgent++;
-                    }
-                    else if(important_v.contains(temp)){
+                    } else if (important_v.contains(temp)) {
                         important++;
-                    }
-                    else if(neutral_v.contains(temp)){
+                    } else if (neutral_v.contains(temp)) {
                         neutral++;
-                    }
-                    else if(unimportant_v.contains(temp)){
+                    } else if (unimportant_v.contains(temp)) {
                         unimportant++;
-                    }
-                    else if(junk_v.contains(temp)){
+                    } else if (junk_v.contains(temp)) {
                         junk++;
-                    }
-                    else if(other_v.contains(temp)){
+                    } else if (other_v.contains(temp)) {
                         other++;
-                    }
-                    else{
-                        if(j == i){
+                    } else {
+                        if (j == i) {
                             other++;
                         }
                     }
@@ -94,8 +88,8 @@ public class Read_Inbox_other extends Activity{
             int[] nums = {urgent, important, neutral, unimportant, junk, other};
             int highest = 0;
 
-            for(i = 1; i < 6; i++){
-                if(nums[highest] < nums[i]){
+            for (i = 1; i < 6; i++) {
+                if (nums[highest] < nums[i]) {
                     highest = i;
                 }
             }
@@ -111,25 +105,20 @@ public class Read_Inbox_other extends Activity{
             //     highest++;
             // }
 
-            if(highest == 0){
+            if (highest == 0) {
                 category = 0;
-            }
-            else if(highest == 1){
+            } else if (highest == 1) {
                 category = 1;
-            }
-            else if(highest == 2){
+            } else if (highest == 2) {
                 category = 2;
-            }
-            else if(highest == 3){
+            } else if (highest == 3) {
                 category = 3;
-            }
-            else if(highest == 4){
+            } else if (highest == 4) {
                 category = 4;
-            }
-            else if(highest == 5){
+            } else if (highest == 5) {
                 category = 5;
             }
-            if(category == 4) {
+            if (category == 4) {
                 Item item = new Item();
                 item.setPhoneNumber(sender);
                 item.setMessage(message);
@@ -141,14 +130,15 @@ public class Read_Inbox_other extends Activity{
         } while (smsInboxCursor.moveToNext() && loops < 500);
         itemArray = new Item[items.size()];
         Iterator it = items.iterator();
-        for(int counter = 0; counter < items.size(); counter++){
+        for (int counter = 0; counter < items.size(); counter++) {
             itemArray[counter] = (Item) it.next();
         }
         mListView = (ListView) findViewById(R.id.recent_list);
-        mListView.setAdapter(new ItemArrayAdapter(this,itemArray ));
+        mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
         // mListView.setAdapter(smsList);
         mListView.setOnItemClickListener(MyItemClickListener);
     }
+
     public void readSMS() {
 
     }
@@ -186,7 +176,7 @@ public class Read_Inbox_other extends Activity{
 
     public static Vector<String> getWords(String text) {
         String temp = "";
-        Vector<String> words = new Vector<String>(1);
+        Vector<String> words = new Vector<>(1);
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) != ' ') {
                 temp = temp + text.charAt(i);

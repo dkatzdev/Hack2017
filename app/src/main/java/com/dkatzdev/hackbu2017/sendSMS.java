@@ -51,10 +51,10 @@ Creates the click listener for the application and what should happen if the use
                 /*
                 IF not then we create a Toast object which pop up display that displays an error message
                  */
-                else{
+                else {
                     Toast.makeText(getBaseContext(),
-                                    "Please enter a message and phone number",
-                                    Toast.LENGTH_SHORT).show();
+                            "Please enter a message and phone number",
+                            Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -62,7 +62,7 @@ Creates the click listener for the application and what should happen if the use
         });
     }
 
-    private void sendSMS_method(String phoneNumber, String Textmessage ){
+    private void sendSMS_method(String phoneNumber, String Textmessage) {
         /*
         This identifies a pending intent object that identifies the object's request and in turn
         starts up the smsManager and sends the text message
