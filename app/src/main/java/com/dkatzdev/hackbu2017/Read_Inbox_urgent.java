@@ -28,7 +28,7 @@ public class Read_Inbox_urgent extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.urgent_list);
+        setContentView(R.layout.recent_list);
         int loops = 0;
         ContentResolver contentResolver = getContentResolver();
         Cursor smsInboxCursor = contentResolver.query(Uri.parse(INBOX_URI), null, null, null, null);
@@ -133,7 +133,7 @@ public class Read_Inbox_urgent extends Activity {
         for (int counter = 0; counter < items.size(); counter++) {
             itemArray[counter] = (Item) it.next();
         }
-        mListView = (ListView) findViewById(R.id.urgent_list);
+        mListView = (ListView) findViewById(R.id.recent_list);
         mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
         // mListView.setAdapter(smsList);
         mListView.setOnItemClickListener(MyItemClickListener);
