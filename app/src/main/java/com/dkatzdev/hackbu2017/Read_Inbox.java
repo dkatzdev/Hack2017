@@ -15,6 +15,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+//TODO Implement MMS support
+//TODO Fix Action Bar not displaying in the different inboxes
+//TODO Replace the various inbox activities with one dynamic one
+    // This dynamic inbox will take an intent from the main activity which specifies the "inbox"
+    // chosen, and uses that to select the priority level to display. This will make it easier to
+    // modify the categorization algorithm without redundant code
 public class Read_Inbox extends Activity{
 
     private static final String INBOX_URI = "content://sms/inbox";

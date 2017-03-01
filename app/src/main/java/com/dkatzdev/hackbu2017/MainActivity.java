@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        //Defines what to do when back button pressed
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -178,7 +179,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_recent) {
             Intent myIntent = new Intent(MainActivity.this, Read_Inbox.class);
             MainActivity.this.startActivity(myIntent);
-            // Handle the camera action
         } else if (id == R.id.nav_urgent) {
             Intent myIntent = new Intent(MainActivity.this, Read_Inbox_urgent.class);
             myIntent.putExtra("choice", 0);
