@@ -174,27 +174,27 @@ public class MainActivity extends AppCompatActivity
             Intent myIntent = new Intent(MainActivity.this, Read_Inbox.class);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_urgent) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_urgent.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 0);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_important) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_important.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 1);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_neutral) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_neutral.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 2);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_unimportant) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_unimportant.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 3);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_other) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_other.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 4);
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_junk) {
-            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_junk.class);
+            Intent myIntent = new Intent(MainActivity.this, Read_Inbox_Prioritized.class);
             myIntent.putExtra("choice", 5);
             MainActivity.this.startActivity(myIntent);
         }

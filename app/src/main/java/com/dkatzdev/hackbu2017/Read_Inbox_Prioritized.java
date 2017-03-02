@@ -11,17 +11,16 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.Iterator;
 import java.util.Vector;
 
+public class Read_Inbox_Prioritized extends Activity {
 
-public class Read_Inbox_other extends Activity {
     private static final String INBOX_URI = "content://sms/inbox";
     private TwoLineArrayAdapter<String> smsList;
     private ListView mListView;
-    int category;
+    int selection;
     Vector<Item> items = new Vector<>();
     Item[] itemArray;
     private ArrayAdapter<String> adapter;
@@ -30,7 +29,8 @@ public class Read_Inbox_other extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recent_list);
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
+        Intent choice = getIntent();
+        selection = choice.getIntExtra("choice", 0);
         int loops = 0;
         ContentResolver contentResolver = getContentResolver();
         Cursor smsInboxCursor = contentResolver.query(Uri.parse(INBOX_URI), null, null, null, null);
@@ -120,7 +120,7 @@ public class Read_Inbox_other extends Activity {
             } else if (highest == 5) {
                 category = 5;
             }
-            if (category == 4) {
+            if (category == selection) {
                 Item item = new Item();
                 item.setPhoneNumber(sender);
                 item.setMessage(message);
@@ -136,14 +136,9 @@ public class Read_Inbox_other extends Activity {
             itemArray[counter] = (Item) it.next();
         }
         mListView = (ListView) findViewById(R.id.recent_list);
-        if(this.itemArray != null) {
-            mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
-            // mListView.setAdapter(smsList);
-            mListView.setOnItemClickListener(MyItemClickListener);
-        }
-        else{
-            textView1.setText("No Messages to Display");
-        }
+        mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
+        // mListView.setAdapter(smsList);
+        mListView.setOnItemClickListener(MyItemClickListener);
     }
 
     public void readSMS() {
@@ -154,9 +149,9 @@ public class Read_Inbox_other extends Activity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
             try {
-                Intent myIntent = new Intent(Read_Inbox_other.this, sendSMS.class);
+                Intent myIntent = new Intent(Read_Inbox_Prioritized.this, sendSMS.class);
                 myIntent.putExtra(Intent.EXTRA_TEXT, itemArray[pos].getPhoneNumber());
-                Read_Inbox_other.this.startActivity(myIntent);
+                Read_Inbox_Prioritized.this.startActivity(myIntent);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -180,6 +175,12 @@ public class Read_Inbox_other extends Activity {
              }
          }
      }*/
+    public void add_to_list(String sender, String message) {
+        Item item = new Item();
+        item.setPhoneNumber(sender);
+        item.setMessage(message);
+        items.add(item);
+    }
 
     public static Vector<String> getWords(String text) {
         String temp = "";

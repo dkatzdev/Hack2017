@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 //TODO Implement MMS support
 //TODO Fix Action Bar not displaying in the different inboxes
@@ -35,11 +36,17 @@ public class Read_Inbox extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recent_list);
+        TextView textView1 = (TextView) findViewById(R.id.textView1);
         readSMS();
         mListView = (ListView) findViewById(R.id.recent_list);
-        mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
-        // mListView.setAdapter(smsList);
-        mListView.setOnItemClickListener(MyItemClickListener);
+        if(this.itemArray != null) {
+            mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
+            // mListView.setAdapter(smsList);
+            mListView.setOnItemClickListener(MyItemClickListener);
+        }
+        else{
+            textView1.setText("No Messages to Display");
+        }
     }
 
     @Override

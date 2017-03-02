@@ -2,8 +2,8 @@ package com.dkatzdev.hackbu2017;
 
 import android.content.Context;
 
-public class ItemArrayAdapter extends TwoLineArrayAdapter<Item> {
-    public ItemArrayAdapter(Context context, Item[] items) {
+class ItemArrayAdapter extends TwoLineArrayAdapter<Item> {
+    ItemArrayAdapter(Context context, Item[] items) {
         super(context, items);
     }
 

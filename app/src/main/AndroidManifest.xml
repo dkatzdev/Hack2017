@@ -47,6 +47,9 @@
         <activity
             android:name=".Read_Inbox_junk"
             android:label="Junk"/>
+        <activity
+            android:name=".Read_Inbox_Prioritized"
+            android:label="Messages"/>
     </application>
 
 </manifest>
