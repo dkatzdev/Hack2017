@@ -30,24 +30,6 @@
             android:name=".Read_Inbox"
             android:label="Recent"/>
         <activity
-            android:name=".Read_Inbox_urgent"
-            android:label="Urgent"/>
-        <activity
-            android:name=".Read_Inbox_important"
-            android:label="Important"/>
-        <activity
-            android:name=".Read_Inbox_neutral"
-            android:label="Neutral"/>
-        <activity
-            android:name=".Read_Inbox_unimportant"
-            android:label="Unimportant"/>
-        <activity
-            android:name=".Read_Inbox_other"
-            android:label="Other"/>
-        <activity
-            android:name=".Read_Inbox_junk"
-            android:label="Junk"/>
-        <activity
             android:name=".Read_Inbox_Prioritized"
             android:label="Messages"/>
     </application>
