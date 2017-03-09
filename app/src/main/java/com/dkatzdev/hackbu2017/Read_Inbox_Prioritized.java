@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.Iterator;
 import java.util.Vector;
@@ -31,6 +32,21 @@ public class Read_Inbox_Prioritized extends Activity {
         setContentView(R.layout.recent_list);
         Intent choice = getIntent();
         selection = choice.getIntExtra("choice", 0);
+        TextView textView1 = (TextView) findViewById(R.id.textView1);
+
+        readSMS();
+        mListView = (ListView) findViewById(R.id.recent_list);
+        if(this.itemArray != null) {
+            mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
+            // mListView.setAdapter(smsList);
+            mListView.setOnItemClickListener(MyItemClickListener);
+        }
+        else{
+            textView1.setText("No Messages to Display");
+        }
+    }
+
+    public void readSMS() {
         int loops = 0;
         ContentResolver contentResolver = getContentResolver();
         Cursor smsInboxCursor = contentResolver.query(Uri.parse(INBOX_URI), null, null, null, null);
@@ -135,14 +151,6 @@ public class Read_Inbox_Prioritized extends Activity {
         for (int counter = 0; counter < items.size(); counter++) {
             itemArray[counter] = (Item) it.next();
         }
-        mListView = (ListView) findViewById(R.id.recent_list);
-        mListView.setAdapter(new ItemArrayAdapter(this, itemArray));
-        // mListView.setAdapter(smsList);
-        mListView.setOnItemClickListener(MyItemClickListener);
-    }
-
-    public void readSMS() {
-
     }
 
     private OnItemClickListener MyItemClickListener = new OnItemClickListener() {
